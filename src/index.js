@@ -3,10 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Feed from './pages/Feed';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path ='/' component={App}/>
+        <Route exact path='/signup' component={SignUp}/>
+        <Route exact path='/LogIn' component={LogIn}/>
+        <Route exact path='/home' component={Feed}/>
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
